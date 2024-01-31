@@ -1,0 +1,21 @@
+[{
+  "_id": {
+    "$oid": "606cbf01649e5d1844fcee8d"
+  },
+  "name": "Akinlonu Eniola",
+  "username": "akineni",
+  "type": "Agent",
+  "email": "akinlonueniola@gmail.com",
+  "password": "$2b$10$0OWxycnX4zNu7JXtUBRDUOhiTsWFVZLVBMdMnK2XwVwCm0J6C1y5q",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606db4900ee513129c461411"
+  },
+  "name": "Akinlonu Eniola Oluwatobi",
+  "username": "akineni1",
+  "type": "Individual",
+  "email": "akinlonueniola@yahoo.com",
+  "password": "$2b$10$m801.FnvG7McvcVmcx0i/ue2ILLKDYVlDOvQCtB1k91.SqamrOYb6",
+  "__v": 0
+}]

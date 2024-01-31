@@ -1,0 +1,218 @@
+[{
+  "_id": {
+    "$oid": "606cc00e649e5d1844fcee8e"
+  },
+  "contact": {
+    "email": "akinlonueniola@gmail.com",
+    "phones": {
+      "mobile": "09068857142",
+      "whatsApp": "09068857142"
+    }
+  },
+  "worth": "80000000",
+  "name": "a lovely 1 bedroom self contain",
+  "deal": "rent",
+  "description": "a lovely 1 bedroom self contain for rent in lekki phase 1",
+  "location": "lekki phase 1",
+  "type": "House",
+  "spec": {
+    "bedrooms": "1",
+    "bathrooms": "1",
+    "toilets": "1"
+  },
+  "completed": "true",
+  "furnished": "false",
+  "photos": [
+    "uploads\\1b0510e9-0389-4c55-9b37-21a5a5e22599.jpg",
+    "uploads\\d780c41a-ced6-4e7a-b1fa-7b9cd7657b01.jpg"
+  ],
+  "UID": "606cbf01649e5d1844fcee8d",
+  "now": {
+    "$date": "2021-04-06T20:09:50.044Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606cc141649e5d1844fcee8f"
+  },
+  "contact": {
+    "email": "akinlonueniola@gmail.com",
+    "phones": {
+      "mobile": "09068857142",
+      "whatsApp": "09068857142"
+    }
+  },
+  "worth": "7500000",
+  "description": "A 2 bedroom suite uncompleted building for sale ado ajah lagos",
+  "name": "A 2 bedroom suite uncompleted building",
+  "location": "ado ajah lagos",
+  "type": "Land",
+  "spec": {
+    "bedrooms": "3",
+    "bathrooms": "3",
+    "toilets": "3"
+  },
+  "completed": "false",
+  "deal": "sale",
+  "photos": [
+    "uploads\\e03d635a-667c-4a8e-bba0-0102067cf126.jpg",
+    "uploads\\9376de09-7988-47a3-bf79-211c131e1fb9.jpg"
+  ],
+  "UID": "606cbf01649e5d1844fcee8d",
+  "now": {
+    "$date": "2021-04-06T20:14:57.967Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606cc2c9649e5d1844fcee90"
+  },
+  "contact": {
+    "email": "akinlonueniola@gmail.com",
+    "phones": {
+      "mobile": "09068857142",
+      "whatsApp": "09068857142"
+    }
+  },
+  "worth": "500000000",
+  "name": "UBA bank",
+  "description": "UBA bank building, alot of compartments, toilets, bathrooms etc...",
+  "location": "UBA bank badagry oja, Lagos",
+  "type": "Commercial property",
+  "spec": {
+    "bathrooms": "8",
+    "toilets": "8"
+  },
+  "deal": "sale",
+  "completed": "true",
+  "photos": [
+    "uploads\\35e2418a-90d2-434f-b4a9-377d5dc0ab61.jpg",
+    "uploads\\5936fbc2-b0de-4531-8f64-c297693fa065.jpg",
+    "uploads\\aa2dce06-c126-4de5-86eb-dcd17d29df53.jpg"
+  ],
+  "UID": "606cbf01649e5d1844fcee8d",
+  "now": {
+    "$date": "2021-04-06T20:21:29.516Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606cc5b4649e5d1844fcee91"
+  },
+  "contact": {
+    "email": "akinlonueniola@gmail.com",
+    "phones": {
+      "mobile": "09068857142",
+      "whatsApp": "09068857142"
+    }
+  },
+  "worth": "3000",
+  "name": "Crawford university",
+  "location": "Atan Lusada, Faith city igbesa, ogun state",
+  "type": "Commercial property",
+  "spec": {},
+  "deal": "sale",
+  "description": "Tertiary institution",
+  "photos": [
+    "uploads\\91d9e940-8f90-480f-b961-6d5d0c9902fd.jpg",
+    "uploads\\b6b22262-8ac0-4fbf-b3d5-3ebc51e41274.jpg",
+    "uploads\\44070036-62c2-4cde-9e57-6adb2c447744.jpg"
+  ],
+  "UID": "606cbf01649e5d1844fcee8d",
+  "now": {
+    "$date": "2021-04-06T20:33:56.755Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606db5980ee513129c461412"
+  },
+  "contact": {
+    "email": "akinlonueniola@yahoo.com",
+    "phones": {
+      "mobile": "09068857142",
+      "whatsApp": "09068857142"
+    }
+  },
+  "worth": "1500000",
+  "name": "3 Plot of land",
+  "description": "3 plot of bare land in ikoyi, grass land, green land for farming and plantation",
+  "location": "ikoyi, lagos state",
+  "type": "Land",
+  "spec": {},
+  "deal": "sale",
+  "photos": [
+    "uploads\\18c3c80d-ef1c-44b4-aabc-00cc739ccd6e.jpg",
+    "uploads\\37d92698-7332-474e-9e55-733e7d88cdd5.jpg"
+  ],
+  "UID": "606db4900ee513129c461411",
+  "now": {
+    "$date": "2021-04-07T13:37:28.851Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606ef1fb0863621fb44f60ab"
+  },
+  "contact": {
+    "email": "akinlonueniola@gmail.com",
+    "phones": {
+      "mobile": "09068857142",
+      "whatsApp": "09068857142"
+    }
+  },
+  "worth": "5000000",
+  "deal": "rent",
+  "completed": "true",
+  "furnished": "true",
+  "type": "Flat",
+  "spec": {
+    "bedrooms": "2",
+    "bathrooms": "2",
+    "toilets": "4"
+  },
+  "location": "lekki phase 1 lekki, lagos",
+  "name": "brand new 2 bedroom flat",
+  "description": "brand new 2 bedroom flat for rent lekki phase 1 for rent lekki phase 1 lekki, lagos",
+  "photos": [
+    "uploads\\87ccb668-5d1a-4dbb-ba5e-bf4917d05feb.jpg",
+    "uploads\\fe326264-b62e-4ec5-9fb6-1f6236408bc2.jpg",
+    "uploads\\edc62d01-d5b6-4579-909b-25e71b08955a.jpg"
+  ],
+  "UID": "606cbf01649e5d1844fcee8d",
+  "now": {
+    "$date": "2021-04-08T12:07:23.024Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "606ef3867f53b42d68ba9f1d"
+  },
+  "contact": {
+    "email": "akinlonueniola@yahoo.com",
+    "phones": {
+      "mobile": "09068857142",
+      "whatsApp": "09068857142"
+    }
+  },
+  "worth": "34500000",
+  "name": "nicely renovated 3 bedroom flat",
+  "deal": "rent",
+  "description": "nicely renovated 3 bedroom flat for rent in lekki phase 1",
+  "location": "lekki phase 1",
+  "type": "Flat",
+  "spec": {
+    "bedrooms": "3",
+    "bathrooms": "3",
+    "toilets": "3"
+  },
+  "completed": "true",
+  "photos": [
+    "uploads\\911e620c-7d82-4aa6-827b-0e6201e28865.jpg"
+  ],
+  "UID": "606db4900ee513129c461411",
+  "now": {
+    "$date": "2021-04-08T12:13:58.500Z"
+  },
+  "__v": 0
+}]

@@ -1,0 +1,376 @@
+<style>
+  .fotorama-wrapper, .progress-wrapper {
+    position: relative;
+  }
+  .fotorama > div { margin: auto; margin-bottom: 20px }
+  .remove {
+    display: none;
+    color: #333 !important;
+    background-color: transparent;
+    font-size: 28px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    position: absolute;
+    top: 30px;
+    right: 0;
+  }
+
+  .remove:hover {
+    background-color: #F36A5A;
+    color: #fff !important
+  }
+
+  .circle {
+    position: absolute;
+    top: -15px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .circle.point {
+    background-color: #337ab7;
+  }
+
+  .progress-wrapper {
+    margin: 40px auto !important;
+  }
+
+td:nth-child(2) {
+  text-transform: capitalize;
+}
+</style>
+
+<form method="post" enctype="multipart/form-data" name="repl_list_property">
+  <div class="alert alert-info">All fields marked (<span class="text-danger">*</span>) are required</div>
+
+  <div class="progress-wrapper">
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" style="width: {{ ((tab+1)/(tabs.maxIndex+1)) * 100 }}%"></div>
+    </div>
+    <!--div class="circle" style="left: calc(25% - 25px);"></div>
+    <div class="circle" style="left: calc(50% - 25px);"></div>
+    <div class="circle" style="left: calc(75% - 25px);"></div-->
+  </div>
+  
+  <div ng-show="tab == 0">
+
+    <div class="fotorama-wrapper">
+      <div class="fotorama" data-arrows="true" data-click="true" data-swipe="true" 
+      data-nav="thumbs" data-autoplay="true" data-auto="false" data-ratio="16/9" data-keyboard="true"
+      data-allowfullscreen="native"></div>
+      <button class="remove icon-delete" type="button"></button>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="exampleInputFile">Select pictures <span class="text-danger">*</span></label>
+          <div class="input-group">
+            <div class="input-group-addon"><span class="icon-files-o"></span></div>
+          <input type="file" id="exampleInputFile" onchange="angular.element(this).scope().preview(event)"
+          multiple accept="image/jpeg" required class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="exampleFormControl1">Worth <span class="text-danger">*</span></label>
+          <div class="input-group">
+            <div class="input-group-addon">&#8358;</div>
+          <input type="text" class="form-control" id="exampleFormControl1" placeholder="e.g 10000000"
+          ng-model="property.worth" required>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div ng-show="tab == 1">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name <span class="text-danger">*</span></label>
+      <div class="input-group">
+        <div class="input-group-addon"><span class="icon-title"></span></div>
+      <input type="text" class="form-control" id="exampleFormControlInput1" required 
+      placeholder="e.g 25 bedroom hotel / guest house" ng-model="property.name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description <span class="text-danger">*</span></label>
+      <div class="input-group">
+        <div class="input-group-addon"><span class="icon-short_text"></span></div>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required 
+      placeholder="e.g Functional 80 room hotel on almost 4000sqm" ng-model="property.description"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput2">Location <span class="text-danger">*</span></label>
+      <div class="input-group">
+        <div class="input-group-addon"><span class="icon-room"></span></div>
+      <input type="text" class="form-control" id="exampleFormControlInput2" required 
+      placeholder="e.g Victoria island extension, Victoria island (VI), Lagos." ng-model="property.location">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Type <span class="text-danger">*</span></label>
+          <div class="input-group">
+            <div class="input-group-addon"><span class="icon-home2"></span></div>
+          <select class="form-control" id="exampleFormControlSelect1" ng-model="property.type"
+          ng-options="type for type in ['Flat', 'House', 'Land', 'Commercial property']"
+          ng-model="property.type" required>
+            <option value="" disabled>Select type...</option>
+          </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6">
+        <label>Deal <span class="text-danger">*</span></label>
+        <div class="form-group">
+          <label class="radio-inline">
+            <input type="radio" name="deal" id="inlineRadio1" value="sale" ng-model="property.deal"
+            required> Sale
+          </label>
+          <label class="radio-inline">
+            <input type="radio" name="deal" id="inlineRadio2" value="rent" ng-model="property.deal"
+            required> Rent
+          </label>
+        </div>
+      </div>
+
+    </div>
+    <div class="row" ng-show="property.type == 'House' || property.type == 'Flat'">
+      <div class="col-md-3 col-sm-6">
+        <div class="form-group">
+          <label for="exampleSelect1">Bedrooms</label>
+          <div class="input-group">
+            <div class="input-group-addon"><span class="icon-bed"></span></div>
+          <input type="number" class="form-control" id="exampleSelect1" placeholder="e.g 4"
+          ng-model="property.spec.bedrooms">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="form-group">
+          <label for="example1">Bathrooms</label>
+          <div class="input-group">
+            <div class="input-group-addon"><span class="icon-bathtub"></span></div>
+          <input type="number" class="form-control" id="example1" placeholder="e.g 4"
+          ng-model="property.spec.bathrooms">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="form-group">
+          <label for="exampleFormControlSel">Toilets</label>
+          <div class="input-group">
+            <div class="input-group-addon"><i class="fas fa-toilet"></i></div>
+            <input type="number" class="form-control" id="exampleFormControlSel" placeholder="e.g 4"
+          ng-model="property.spec.toilets">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <div class="form-group">
+          <label for="FormControlSelect1">Parking spaces</label>
+          <div class="input-group">
+            <div class="input-group-addon"><i class="fas fa-car"></i></div>
+          <input type="number" class="form-control" id="FormControlSelect1" placeholder="e.g 7"
+          ng-model="property.spec.parking_spaces">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" ng-show="property.type == 'Land' || property.type == 'Commercial property'">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="exampleControlSelect1">sqm Total Area</label>
+          <div class="input-group">
+            <div class="input-group-addon"><span class="icon-square-o"></span></div>
+          <input type="number" class="form-control" id="exampleControlSelect1" placeholder="e.g 850"
+          ng-model="property.spec.sta">
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="exampleFormSelect1">sqm Covered Area</label>
+          <div class="input-group">
+            <div class="input-group-addon"><span class="icon-home"></span></div>
+          <input type="number" class="form-control" id="exampleFormSelect1" placeholder="e.g 2500"
+          ng-model="property.spec.sca">
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-row">
+      <div class="col-md-6">
+        <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="completed" id="inlineRadio1" value="true" ng-model="property.completed"> Completed
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="completed" id="inlineRadio2" value="false" ng-model="property.completed"> Uncompleted
+        </label>
+      </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" name="furnished" id="inlineRadio" value="true" ng-model="property.furnished"> Furnished
+        </label>
+        <label class="radio-inline">
+          <input type="radio" name="furnished" id="inlineRadio3" value="false" ng-model="property.furnished"> Unfurnished
+        </label>
+      </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div ng-show="tab == 2">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Phone number <span class="text-danger">*</span></label>
+          <div class="input-group">
+            <div class="input-group-addon"><span class="icon-phone"></span></div>
+          <input type="tel" class="form-control" id="exampleFormControlSelect1" placeholder="e.g 09068857142"
+          ng-model="property.contact.phones.mobile" required>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">Phone number 2 (WhatsApp)</label>
+          <div class="input-group">
+            <div class="input-group-addon"><span class="icon-whatsapp"></span></div>
+            <input type="tel" class="form-control" id="exampleFormControlSelect2" placeholder="e.g 09068857142"
+          ng-model="property.contact.phones.whatsApp">
+        </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput3">Email</label>
+      <div class="input-group">
+        <div class="input-group-addon"><span class="icon-envelope-o"></span></div>
+        <input type="email" class="form-control" id="exampleFormControlInput3" placeholder="name@email.com"
+        ng-model="property.contact.email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlInput4">Website</label>
+      <div class="input-group">
+        <div class="input-group-addon"><span class="icon-globe"></span></div>
+      <input type="url" class="form-control" id="exampleFormControlInput4" placeholder="https://"
+      ng-model="property.contact.url">
+      </div>
+    </div>
+  </div>
+
+  <div ng-show="tab == 3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          Details
+      </div>
+      <div class="panel-body">
+          <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Field</th>
+                          <th>Value</th>
+                          <!--th></th-->
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr ng-repeat="(field, value) in property | removeObj">
+                          <td>{{ $index + 1 }}</td>
+                          <td>{{ field }}</td>
+                          <td>{{ field == 'worth' ? '&#8358;' : '' }} 
+                            {{ field == 'worth' ? (value | number) : value }}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+
+  <div class="panel panel-default" ng-show="property.spec">
+    <div class="panel-heading">
+        Specifications
+    </div>
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Field</th>
+                        <th>Value</th>
+                        <!--th></th-->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="(field, value) in property.spec">
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ field == 'parking_spaces' ? 'Parking Spaces' : field }}</td>
+                        <td>{{ value }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+    <div class="panel panel-default" ng-show="property.contact">
+      <div class="panel-heading">
+          Contact
+      </div>
+      <div class="panel-body">
+          <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>#</th>
+                          <th>Field</th>
+                          <th>Value</th>
+                          <!--th></th-->
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr ng-repeat="(field, value) in property.contact">
+                          <td>{{ $index + 1 }}</td>
+                          <td>{{ field }}</td>
+                          <td>{{ value | objToString }}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+  </div>
+
+  <button type="submit" class="btn btn-success pull-right" ng-show="tab == tabs.maxIndex" 
+  ng-click="list_property()" ng-disabled="repl_list_property.$invalid">Submit</button>
+    <button class="btn btn-primary pull-right" ng-click="tab = tab + 1" ng-hide="tab == tabs.maxIndex">Next
+      <span class="icon-keyboard_arrow_right"></span>
+    </button>
+    <span class="pull-right">&nbsp;&nbsp;&nbsp;</span>
+    <button class="btn btn-primary pull-right" ng-click="tab = tab - 1" 
+    ng-hide="tab == undefined || tab == 0"><span class="icon-keyboard_arrow_left"></span> Previous</button>
+    <div class="clearfix"></div>
+
+</form>

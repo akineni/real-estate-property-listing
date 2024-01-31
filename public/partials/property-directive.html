@@ -1,0 +1,24 @@
+<div class="card">
+    <a ui-sref="properties.property({propertyId: property._id })">
+        <div class="image-area">
+            <img ng-src="../{{ property.photos[0] }}" width="100%">
+            <div class="box">
+                <span class="icon-camera"></span> {{ property.photos.length }}
+            </div>
+        </div>
+        <div class="card-content">
+        <h4 class="title"><b>{{ property.name }} for {{ property.deal }}</b></h4>
+        <div class="location">{{ property.location }}</div>
+        <h2 class="worth"><b>&#8358;{{ property.worth | number }}</b></h2>
+        <div class="flex">
+            <div class="spec" ng-if="property.spec.bedrooms"><span class="icon-bed"></span><br>{{ property.spec.bedrooms }} Bedrooms</div>
+            <div class="spec" ng-if="property.spec.bathrooms"><span class="icon-bathtub"></span><br>{{ property.spec.bathrooms }} Bathrooms</div>
+            <div class="spec" ng-if="property.spec.toilets"><span class="fas fa-toilet"></span><br>{{ property.spec.toilets }} Toilets</div>
+            <div class="spec" ng-if="property.spec.parking_spaces"><span class="fas fa-car"></span><br>{{ property.spec.parking_spaces }} Parking Spaces</div>
+            <div class="spec" ng-if="property.spec.sta"><span class="icon-square-o"></span><br>{{ property.spec.sta }} sqm Total Area</div>
+            <div class="spec" ng-if="property.spec.sca"><span class="icon-home"></span><br>{{ property.spec.sca }} sqm Covered Area</div>
+
+        </div>
+        </div>
+    </a>
+</div>
